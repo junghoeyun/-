@@ -6,6 +6,7 @@ import Home from "./Home";
 import { Link, Route } from "react-router-dom";
 import useScrollFadeIn from "./useScrollFadeIn";
 import WebFooter from "./MainFooter";
+import EmailApi from "./EmailApi";
 const DIVIDER_HEIGHT = 5;
 
 const SlickScroll = () => {
@@ -16,7 +17,6 @@ const SlickScroll = () => {
       const { deltaY } = e;
       const { scrollTop } = outerDivRef.current; // 스크롤 위쪽 끝부분 위치
       const pageHeight = window.innerHeight; // 화면 세로길이, 100vh와 같습니다.
-
       if (deltaY > 0) {
         // 스크롤 내릴 때
         if (scrollTop >= 0 && scrollTop < pageHeight) {
@@ -160,10 +160,12 @@ const SlickScroll = () => {
           </span>
         </div>
       </div>
-      <div className="inner bg-black"></div>
+      <div className="inner bg-black">
+        <EmailApi />
+      </div>
       <div className="inner bg-dark">
         <li {...useScrollFadeIn("up", 1, 0)}>
-          <Link to="/LandingPage">
+          <Link to="/ApiLandingPage">
             <img src="./store-map.jpg" alt="" />
           </Link>
         </li>

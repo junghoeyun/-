@@ -5,7 +5,7 @@ import SlickScroll from "./components/SlickScroll";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Product1 from "./components/Product1";
 import Page2 from "./components/Page2";
-import LandingPage from "./components/LandingPage";
+import ApiLandingPage from "./components/ApiLandingPage";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
           <Route path="/" element={<SlickScroll />} />
           <Route path="/product1" element={<Product1 />} />
           <Route path="/page2" element={<Page2 />} />
-          <Route path="/LandingPage" element={<LandingPage />} />
+          <Route path="/ApiLandingPage" element={<ApiLandingPage />} />
         </Routes>
       </BrowserRouter>
     </div>

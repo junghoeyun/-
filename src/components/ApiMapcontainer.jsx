@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "../css/Mapcontainer.css";
+import "../css/ApiMapcontainer.css";
+import "../App.css";
+
 const { kakao } = window;
 
-const MapContainer = ({ searchPlace }) => {
+const ApiMapContainer = ({ searchPlace }) => {
   // 검색결과 배열에 담아줌
   const [Places, setPlaces] = useState([]);
 
@@ -92,6 +94,7 @@ const MapContainer = ({ searchPlace }) => {
           style={{
             width: "1450px",
             height: "800px",
+            position: "absolute",
           }}
         ></div>
       </div>
@@ -99,7 +102,13 @@ const MapContainer = ({ searchPlace }) => {
         <li>
           <div id="result-list">
             {Places.map((item, i) => (
-              <div key={i} style={{ marginTop: "10px" }}>
+              <div
+                key={i}
+                style={{
+                  marginTop: "10px",
+                  position: "relative",
+                }}
+              >
                 <span>{i + 1}</span>
                 <div>
                   <h5>{item.place_name}</h5>
@@ -123,4 +132,4 @@ const MapContainer = ({ searchPlace }) => {
   );
 };
 
-export default MapContainer;
+export default ApiMapContainer;
